@@ -3,8 +3,8 @@ package impl;
 public interface ProductManagerAct {
     void showProductList();
     void addProduct();
-    boolean editInforProduct();
-    boolean deleteProduct(String name);
+    void editInforProduct();
+    void deleteProduct(String id);
     boolean findProduct(String name);
     void sortProductList();
 }

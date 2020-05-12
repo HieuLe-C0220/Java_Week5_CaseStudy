@@ -9,6 +9,4 @@ public interface ProductStatic {
     void setPrice(int price);
     int getStatus();
     void setStatus(int status);
-    String getDescription();
-    void setDescription(String description);
 }
