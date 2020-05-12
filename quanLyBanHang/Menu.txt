@@ -1,0 +1,9 @@
+000,Phở tái bắp,45000,1,đặc biệt
+001,Phở tái bắp,35000,2,bình thường
+002,Phở tái thường,30000,3,bình thường
+003,Phở chín,45000,1,đặc biệt
+004,Phở chín,30000,2,bình thường
+005,Phở tái chín,45000,1,đặc biệt
+006,Phở tái chín,30000,2,bình thường
+007,Phở tái gàu,50000,1,đặc biệt
+008,Phở tái gàu,35000,2,bình thương
