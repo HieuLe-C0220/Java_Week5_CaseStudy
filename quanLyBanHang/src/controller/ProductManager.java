@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ProductManager implements ProductManagerAct {
-    Scanner scanner = new Scanner(System.in);
     private Synchronizer synchronizer = new Synchronizer();
     private ArrayList<Product> arrayList= synchronizer.readToFile();
     public void addProduct() {
@@ -32,8 +31,7 @@ public class ProductManager implements ProductManagerAct {
 
     @Override
     public void findProduct() {
-        String name = scanner.nextLine();
-        FindProduct.findProduct(arrayList,name);
+        FindProduct.findProduct(arrayList);
     }
 
     @Override

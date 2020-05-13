@@ -10,10 +10,10 @@ public class Test {
 //        synchronizer.orderFood(2);
 //        synchronizer.orderFood(3);
 //        productManager.addProduct();
-        productManager.editInformationProduct();
-//        productManager.showProductList();
+//        productManager.editInformationProduct();
+        productManager.findProduct();
 //        productManager.deleteProduct();
-        productManager.saveToFile();
+//        productManager.saveToFile();
 //        productManager.showProductList();
     }
 }
