@@ -12,7 +12,7 @@ public class Test {
 //        productManager.addProduct();
         productManager.showProductList();
         productManager.deleteProduct();
-//        productManager.savetoFile();
+        productManager.savetoFile();
 //        productManager.showProductList();
     }
 }
