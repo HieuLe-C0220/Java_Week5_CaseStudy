@@ -7,6 +7,6 @@ public interface ProductStatic {
     void setName(String name);
     int getPrice();
     void setPrice(int price);
-    int getStatus();
-    void setStatus(int status);
+    String getDescription();
+    void setDescription(String status);
 }

@@ -21,11 +21,19 @@ public class Synchronizer {
             br = new BufferedReader(fileReader);
             while ((line = br.readLine()) != null) {
                 food = line.split(",");
-                Product addProduct = new Product(food[0],food[1],Integer.parseInt(food[2]),Integer.parseInt(food[3]));
+                Product addProduct = new Product(food[0],food[1],Integer.parseInt(food[2]),food[3]);
                 productsList.add(addProduct);
             }
+        } catch (FileNotFoundException e) {
+            System.err.println("Kho lưu trữ không tồn tại, bạn cần sửa lại link lưu trữ");
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                br.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         return productsList;
     }
@@ -43,8 +51,8 @@ public class Synchronizer {
                     String id = productsList.get(i).getId();
                     String name = productsList.get(i).getName();
                     int price = productsList.get(i).getPrice();
-                    int status = productsList.get(i).getStatus();
-                    content = id + ","+name+","+price+","+status;
+                    String description = productsList.get(i).getDescription();
+                    content = id + ","+name+","+price+","+description;
                     bw.write(content);
                     bw.newLine();//xuống dòng
                 }
@@ -54,21 +62,21 @@ public class Synchronizer {
             e.printStackTrace();
         }
     }
-    public void addFoods(ArrayList<Product> arrayList) {
-        File addFood = new File("D:\\Codegym\\Module2-Java\\Week5\\CaseStudy\\quanLyBanHang\\Menu.txt");
+    public void writeToFile(ArrayList<Product> arrayList) {
+        File file = new File("D:\\Codegym\\Module2-Java\\Week5\\CaseStudy\\quanLyBanHang\\Menu.txt");
         try {
-            if (!addFood.exists()) {
+            if (!file.exists()) {
                 throw new FileNotFoundException("File not found");
             }
-            FileWriter fileWriter = new FileWriter(addFood,true);
+            FileWriter fileWriter = new FileWriter(file,true);
             BufferedWriter bw = new BufferedWriter(fileWriter);
             String content = null;
             for (Product newFood : arrayList) {
                 String id = newFood.getId();
                 String name = newFood.getName();
                 int price = newFood.getPrice();
-                int status = newFood.getStatus();
-                content = id + "," + name + "," + price + "," + status;
+                String description = newFood.getDescription();
+                content = id + "," + name + "," + price + "," + description;
                 bw.write(content);
                 bw.newLine();//xuống dòng
             }

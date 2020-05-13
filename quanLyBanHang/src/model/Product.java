@@ -6,15 +6,15 @@ public class Product implements ProductStatic {
     private String id;
     private String name;
     private int price;
-    private int status;
+    private String description;
 
     public Product() {
     }
-    public Product(String id,String name,int price,int status) {
+    public Product(String id,String name,int price,String description) {
         this.id=id;
         this.name = name;
         this.price=price;
-        this.status=status;
+        this.description = description;
     }
 
     public String getId() {
@@ -41,12 +41,12 @@ public class Product implements ProductStatic {
         this.price = price;
     }
 
-    public int getStatus() {
-        return status;
+    public String getDescription() {
+        return description;
     }
 
-    public void setStatus(int status) {
-        this.status = status;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
 }

@@ -4,7 +4,7 @@ public interface ProductManagerAct {
     void showProductList();
     void addProduct();
     void editInforProduct();
-    void deleteProduct(String id);
-    boolean findProduct(String name);
+    void deleteProduct();
+    void findProduct();
     void sortProductList();
 }
