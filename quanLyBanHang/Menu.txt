@@ -7,4 +7,4 @@
 006,Phở tái chín,30000,bình thường
 007,Phở tái gàu,50000,Đặc biệt
 008,Phở tái gàu,35000,thịt bắp
-010,cháo cá,30000,bình thường
+010,Cháo lươn,35000,bình thường

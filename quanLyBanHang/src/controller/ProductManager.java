@@ -1,9 +1,6 @@
 package controller;
 
-import controller.method.AddProduct;
-import controller.method.DeleteProduct;
-import controller.method.FindProduct;
-import controller.method.ShowProductList;
+import controller.method.*;
 import impl.ProductManagerAct;
 import model.Product;
 import productIO.Synchronizer;
@@ -24,7 +21,8 @@ public class ProductManager implements ProductManagerAct {
     }
 
     @Override
-    public void editInforProduct() {
+    public void editInformationProduct() {
+        EditInformationProduct.editInformationProduct(arrayList);
     }
 
     @Override
@@ -41,7 +39,7 @@ public class ProductManager implements ProductManagerAct {
     @Override
     public void sortProductList() {
     }
-    public void savetoFile() {
+    public void saveToFile() {
         synchronizer.writeToFile(arrayList);
     }
 }
