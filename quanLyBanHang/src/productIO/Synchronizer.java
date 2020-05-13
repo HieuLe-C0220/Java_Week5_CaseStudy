@@ -68,7 +68,7 @@ public class Synchronizer {
             if (!file.exists()) {
                 throw new FileNotFoundException("File not found");
             }
-            FileWriter fileWriter = new FileWriter(file,true);
+            FileWriter fileWriter = new FileWriter(file);
             BufferedWriter bw = new BufferedWriter(fileWriter);
             String content = null;
             for (Product newFood : arrayList) {
@@ -80,7 +80,7 @@ public class Synchronizer {
                 bw.write(content);
                 bw.newLine();//xuống dòng
             }
-            bw.close();
+            bw.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }

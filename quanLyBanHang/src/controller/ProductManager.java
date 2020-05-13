@@ -40,6 +40,8 @@ public class ProductManager implements ProductManagerAct {
 
     @Override
     public void sortProductList() {
-
+    }
+    public void savetoFile() {
+        synchronizer.writeToFile(arrayList);
     }
 }
