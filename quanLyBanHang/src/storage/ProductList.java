@@ -1,5 +1,6 @@
 package storage;
 
+import model.Food;
 import model.Product;
 
 import java.io.File;
@@ -7,6 +8,7 @@ import java.util.ArrayList;
 
 public class ProductList extends Product {
     public ArrayList<Product> productsList = new ArrayList<>();
+    public ArrayList<Food> orderList = new ArrayList<>();
     private ProductList() {
     }
     private static volatile ProductList instance;

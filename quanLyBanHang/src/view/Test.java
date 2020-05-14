@@ -12,6 +12,7 @@ public class Test {
         aSynchronized.readToFile(list.getMenuFile());
 //        productManager.pay();
         productManager.orderFood();
+        productManager.ordered();
 //        productManager.orderFood();
 //        productManager.addProduct();
 //        productManager.editInformationProduct();

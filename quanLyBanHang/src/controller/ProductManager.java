@@ -2,6 +2,7 @@ package controller;
 
 import controller.method.*;
 import impl.ProductManagerAct;
+import model.Food;
 import model.Product;
 import storage.ProductList;
 
@@ -16,14 +17,25 @@ public class ProductManager implements ProductManagerAct {
         return instance;
     }
     ProductList listManager = ProductList.getInstance();
-    private final ArrayList<Product> arrayList= listManager.productsList;
+    private final ArrayList<Product> arrayList = listManager.productsList;
+    private final ArrayList<Food> orderList = listManager.orderList;
     @Override
     public void addProduct() {
         AddProduct.addProduct(arrayList);
     }
     @Override
-    public void showProductList() {
-        ShowProductList.showProductList(arrayList);
+    public void showMenu() {
+        ShowMenu.showProductList(arrayList);
+    }
+
+    @Override
+    public void showOrderList() {
+        ShowOrderList.showOrderList(orderList);
+    }
+
+    @Override
+    public void ordered() {
+        Ordered.ordered(orderList);
     }
 
     @Override

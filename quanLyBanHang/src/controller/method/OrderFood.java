@@ -2,6 +2,7 @@ package controller.method;
 
 import model.Food;
 import model.Product;
+import storage.ProductList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +10,8 @@ import java.util.Scanner;
 
 public class OrderFood {
     public static void orderFood(ArrayList<Product> arrList) {
-        List<Food> orderList = new ArrayList<>();
+        ProductList order = ProductList.getInstance();
+        List<Food> orderList = order.orderList;
         Scanner scanner = new Scanner(System.in).useDelimiter("\n");
         System.out.println("Nhập số thứ tự của món khách order: ");
         int numberId = scanner.nextInt();
@@ -31,9 +33,6 @@ public class OrderFood {
                 orderList.add((Food) orderProduct);
                 break;
             }
-        }
-        for (Food product : orderList) {
-            System.out.println(product.toString());
         }
     }
 }

@@ -1,7 +1,9 @@
 package impl;
 
 public interface ProductManagerAct {
-    void showProductList();
+    void showMenu();
+    void showOrderList();
+    void ordered();
     void addProduct();
     void editInformationProduct();
     void deleteProduct();
