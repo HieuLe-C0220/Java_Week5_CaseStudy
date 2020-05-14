@@ -1,11 +1,11 @@
-package productIO;
+package storage;
 
 import model.Product;
 
 import java.io.*;
 import java.util.ArrayList;
 
-public class IOFile extends Product {
+public class Synchronized {
     public ArrayList<Product> readToFile(File inFile) {
         ProductList listManager = ProductList.getInstance();
         ArrayList<Product> productsList = listManager.productsList;
@@ -18,19 +18,14 @@ public class IOFile extends Product {
             br = new BufferedReader(fileReader);
             while ((line = br.readLine()) != null) {
                 food = line.split(",");
-                Product addProduct = new Product(food[0],food[1],Integer.parseInt(food[2]),food[3]);
+                Product addProduct = new Product(food[0],food[1],Integer.parseInt(food[2]),food[3]){};
                 productsList.add(addProduct);
             }
+            br.close();
         } catch (FileNotFoundException e) {
             System.err.println("Kho lưu trữ không tồn tại, bạn cần sửa lại link lưu trữ");
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                br.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
         return productsList;
     }

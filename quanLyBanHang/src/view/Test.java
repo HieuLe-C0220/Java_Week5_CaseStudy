@@ -1,13 +1,16 @@
 package view;
 
 import controller.ProductManager;
-import productIO.IOFile;
+import storage.Synchronized;
+import storage.ProductList;
 
 public class Test {
     public static void main(String[] args) {
-        IOFile IOFile = new IOFile();
+        Synchronized aSynchronized = new Synchronized();
         ProductManager productManager = new ProductManager();
-        productManager.pay();
+        ProductList list = ProductList.getInstance();
+        aSynchronized.readToFile(list.getMenuFile());
+//        productManager.pay();
 //        productManager.orderFood();
 //        productManager.orderFood();
 //        productManager.addProduct();

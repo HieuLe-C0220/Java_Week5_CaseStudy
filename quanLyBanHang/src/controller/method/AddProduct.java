@@ -24,7 +24,7 @@ public class AddProduct {
         String newDescription = scanner.next();
         newDescription = checkNull(scanner, newDescription, "Vui lòng nhập chú thích món:");
 
-        Product newProduct = new Product(newId,newName,Integer.parseInt(newPrice),newDescription);
+        Product newProduct = new Product(newId,newName,Integer.parseInt(newPrice),newDescription){};
         arrayList.add(newProduct);
         System.out.println("Thao tác thành công");
     }
@@ -32,7 +32,7 @@ public class AddProduct {
     public static String checkNull(Scanner scanner,String input, String s) {
         while (input.equals("")) {
             System.out.println(s);
-            input = scanner.nextLine();
+            input = scanner.next();
         }
         return input;
     }

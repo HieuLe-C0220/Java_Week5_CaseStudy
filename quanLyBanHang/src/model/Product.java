@@ -2,7 +2,7 @@ package model;
 
 import impl.ProductStatic;
 
-public class Product implements ProductStatic {
+public abstract class Product implements ProductStatic {
     private String id;
     private String name;
     private int price;
@@ -47,6 +47,9 @@ public class Product implements ProductStatic {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+    public String toString() {
+        return getId()+","+getName()+","+getPrice()+","+getDescription();
     }
 
 }

@@ -3,14 +3,18 @@ package controller;
 import controller.method.*;
 import impl.ProductManagerAct;
 import model.Product;
-import productIO.ProductList;
-import productIO.IOFile;
+import storage.ProductList;
 
-import java.io.File;
 import java.util.ArrayList;
 
 public class ProductManager implements ProductManagerAct {
-    private IOFile ioFile = new IOFile();
+    private static volatile ProductManager instance;
+    public synchronized static ProductManager getInstance(){
+        if(instance ==null){
+            instance = new ProductManager();
+        }
+        return instance;
+    }
     ProductList listManager = ProductList.getInstance();
     private final ArrayList<Product> arrayList= listManager.productsList;
     @Override
@@ -44,7 +48,7 @@ public class ProductManager implements ProductManagerAct {
 
     @Override
     public void pay() {
-        Pay.pay();
+        Proceeds_Day.proceedsDay();
     }
 
     @Override
@@ -57,7 +61,7 @@ public class ProductManager implements ProductManagerAct {
 
     }
 
-    public void saveToFile() {
-        ioFile.writeToFile(arrayList,listManager.getMenuFile());
-    }
+//    public void saveToFile() {
+//        ioFile.writeToFile(arrayList,listManager.getMenuFile());
+//    }
 }

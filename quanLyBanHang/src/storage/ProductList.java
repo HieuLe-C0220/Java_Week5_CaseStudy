@@ -1,4 +1,4 @@
-package productIO;
+package storage;
 
 import model.Product;
 
@@ -19,10 +19,9 @@ public class ProductList extends Product {
     public File getMenuFile() {
         return menuFile;
     }
-    public File getOrderFile() {
-        return orderFile;
+    public File getProceedsDay() {
+        return proceeds_Day;
     }
-    private File menuFile = new File("D:\\Codegym\\Module2-Java\\Week5\\CaseStudy\\quanLyBanHang\\src\\productIO\\Menu.txt");
-    private File orderFile = new File("D:\\Codegym\\Module2-Java\\Week5\\CaseStudy\\quanLyBanHang\\src\\productIO\\Order.txt");
-//    private File proceedsFile = new File("D:\\Codegym\\Module2-Java\\Week5\\CaseStudy\\quanLyBanHang\\src\\productIO\\Proceeds.txt");
+    private File menuFile = new File("D:\\Codegym\\Module2-Java\\Week5\\CaseStudy\\quanLyBanHang\\src\\storage\\Menu.txt");
+    private File proceeds_Day = new File("D:\\Codegym\\Module2-Java\\Week5\\CaseStudy\\quanLyBanHang\\src\\storage\\Proceeds_Day.txt");
 }
