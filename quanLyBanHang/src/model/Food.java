@@ -57,4 +57,9 @@ public class Food extends Product {
     public String getDescription() {
         return super.getDescription();
     }
+
+    @Override
+    public String toString() {
+        return getTable()+","+getId()+","+getName()+","+getPrice()+","+getAmount()+","+getDescription()+","+getNote();
+    }
 }

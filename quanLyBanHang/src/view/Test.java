@@ -11,7 +11,7 @@ public class Test {
         ProductList list = ProductList.getInstance();
         aSynchronized.readToFile(list.getMenuFile());
 //        productManager.pay();
-//        productManager.orderFood();
+        productManager.orderFood();
 //        productManager.orderFood();
 //        productManager.addProduct();
 //        productManager.editInformationProduct();
