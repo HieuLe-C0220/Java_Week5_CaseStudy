@@ -6,5 +6,8 @@ public interface ProductManagerAct {
     void editInformationProduct();
     void deleteProduct();
     void findProduct();
-    void sortProductList();
+    void orderFood();
+    void pay();
+    void proceedsOf_day();
+    void sortProceedsOf_day();
 }

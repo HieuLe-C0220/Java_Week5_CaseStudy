@@ -3,14 +3,17 @@ package controller;
 import controller.method.*;
 import impl.ProductManagerAct;
 import model.Product;
-import productIO.Synchronizer;
+import productIO.ProductList;
+import productIO.IOFile;
 
+import java.io.File;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class ProductManager implements ProductManagerAct {
-    private Synchronizer synchronizer = new Synchronizer();
-    private ArrayList<Product> arrayList= synchronizer.readToFile();
+    private IOFile ioFile = new IOFile();
+    ProductList listManager = ProductList.getInstance();
+    private final ArrayList<Product> arrayList= listManager.productsList;
+    @Override
     public void addProduct() {
         AddProduct.addProduct(arrayList);
     }
@@ -35,9 +38,26 @@ public class ProductManager implements ProductManagerAct {
     }
 
     @Override
-    public void sortProductList() {
+    public void orderFood() {
+        OrderFood.orderFood(arrayList);
     }
+
+    @Override
+    public void pay() {
+        Pay.pay();
+    }
+
+    @Override
+    public void proceedsOf_day() {
+
+    }
+
+    @Override
+    public void sortProceedsOf_day() {
+
+    }
+
     public void saveToFile() {
-        synchronizer.writeToFile(arrayList);
+        ioFile.writeToFile(arrayList,listManager.getMenuFile());
     }
 }

@@ -1,6 +1,6 @@
 000,Phở tái bắp,45000,Đặc biệt
 001,Phở tái bắp,35000,thịt bắp
-002,Phở tái thường,30000,bình thường
+002,Phở tái,30000,bình thường
 003,Phở chín,45000,Đặc biệt
 004,Phở chín,30000,bình thường
 005,Phở tái chín,45000,Đặc biệt
