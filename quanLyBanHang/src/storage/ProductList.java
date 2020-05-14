@@ -5,10 +5,12 @@ import model.Product;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProductList extends Product {
     public ArrayList<Product> productsList = new ArrayList<>();
     public ArrayList<Food> orderList = new ArrayList<>();
+    public ArrayList<Food> foodArrayList = new ArrayList<>();
     private ProductList() {
     }
     private static volatile ProductList instance;

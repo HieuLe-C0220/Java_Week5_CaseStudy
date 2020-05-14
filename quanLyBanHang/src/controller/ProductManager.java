@@ -19,6 +19,7 @@ public class ProductManager implements ProductManagerAct {
     ProductList listManager = ProductList.getInstance();
     private final ArrayList<Product> arrayList = listManager.productsList;
     private final ArrayList<Food> orderList = listManager.orderList;
+    private final ArrayList<Food> foodArrayList = listManager.foodArrayList;
     @Override
     public void addProduct() {
         AddProduct.addProduct(arrayList);
@@ -60,7 +61,7 @@ public class ProductManager implements ProductManagerAct {
 
     @Override
     public void pay() {
-        Proceeds_Day.proceedsDay();
+        Pay.pay(foodArrayList);
     }
 
     @Override

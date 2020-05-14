@@ -10,9 +10,12 @@ public class Test {
         ProductManager productManager = new ProductManager();
         ProductList list = ProductList.getInstance();
         aSynchronized.readToFile(list.getMenuFile());
-//        productManager.pay();
         productManager.orderFood();
-        productManager.ordered();
+        productManager.orderFood();
+        productManager.orderFood();
+        productManager.showOrderList();
+        productManager.pay();
+//        productManager.ordered();
 //        productManager.orderFood();
 //        productManager.addProduct();
 //        productManager.editInformationProduct();

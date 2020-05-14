@@ -3,7 +3,7 @@ package model;
 import model.Product;
 
 public class Food extends Product {
-    private String table = null;
+    private String table;
     private int amount = 0;
     private String note = null;
 
