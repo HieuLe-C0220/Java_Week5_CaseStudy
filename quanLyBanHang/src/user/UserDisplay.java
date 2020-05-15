@@ -13,12 +13,7 @@ public class UserDisplay {
     Scanner sc = new Scanner(System.in);
     Synchronized aSynchronized = new Synchronized();
     public void start() {
-        System.out.println("Welcome to Restaurant: Who are you?");
-        System.out.println("1. Admin");
-        System.out.println("2. Cashier");
-        System.out.println("3. Chef");
-        System.out.println("0. Exit");
-        System.out.print("Enter your choice: ");
+        showUseSelection();
         int userOption = sc.nextInt();
         aSynchronized.readToFileMenu(list.getMenuFile());
         aSynchronized.readToFileProceeds(list.getProceedsDay());
@@ -38,6 +33,15 @@ public class UserDisplay {
             case 0:
                 System.exit(0);
         }
+    }
+
+    private void showUseSelection() {
+        System.out.println("Welcome to Restaurant: Who are you?");
+        System.out.println("1. Admin");
+        System.out.println("2. Cashier");
+        System.out.println("3. Chef");
+        System.out.println("0. Exit");
+        System.out.print("Enter your choice: ");
     }
 
     private void showMenuAdmin() {
@@ -106,6 +110,7 @@ public class UserDisplay {
         System.out.println("4. Show food order");
         System.out.println("5. Pay");
         System.out.println("0. Exit");
+//        System.out.println("0. Return to Menu");
         System.out.print("Enter your choice: ");
         int cashierOption = sc.nextInt();
         switch (cashierOption) {
@@ -130,7 +135,9 @@ public class UserDisplay {
                 showMenuCashier();
                 break;
             case 0:
-                System.exit(0);
+                showUseSelection();
+                break;
+//                System.exit(0);
         }
     }
     private void showMenuChef() {
@@ -150,7 +157,9 @@ public class UserDisplay {
                 showMenuChef();
                 break;
             case 0:
-                System.exit(0);
+                showUseSelection();
+                break;
+//                System.exit(0);
         }
     }
 }
