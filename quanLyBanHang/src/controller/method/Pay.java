@@ -11,8 +11,9 @@ public class Pay {
         String table = sc.next();
         int sum = 0;
         for (int i=0;i<arrList.size();i++) {
-            if (table.equals(arrList.get(i).getTable())) {
+            if (table.equals(arrList.get(i).getTable()) && !arrList.get(i).isPaid()) {
                 sum += arrList.get(i).getPrice() * arrList.get(i).getAmount();
+                arrList.get(i).setPaid(true);
             }
         }
         System.out.println("Bàn này tổng hết: "+sum);

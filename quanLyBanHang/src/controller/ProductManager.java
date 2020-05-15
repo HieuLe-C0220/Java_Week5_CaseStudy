@@ -9,13 +9,6 @@ import storage.ProductList;
 import java.util.ArrayList;
 
 public class ProductManager implements ProductManagerAct {
-    private static volatile ProductManager instance;
-    public synchronized static ProductManager getInstance(){
-        if(instance ==null){
-            instance = new ProductManager();
-        }
-        return instance;
-    }
     ProductList listManager = ProductList.getInstance();
     private final ArrayList<Product> arrayList = listManager.productsList;
     private final ArrayList<Food> orderList = listManager.orderList;
@@ -65,15 +58,16 @@ public class ProductManager implements ProductManagerAct {
 
     @Override
     public void proceedsOf_day() {
-
+        ProceedsDay.proceedsDay(orderList);
     }
 
     @Override
-    public void sortProceedsOf_day() {
-
+    public void sortUpProceedsOf_day() {
+        SortUpProceeds.sortUpProceeds();
     }
 
-//    public void saveToFile() {
-//        ioFile.writeToFile(arrayList,listManager.getMenuFile());
-//    }
+    @Override
+    public void sortDownProceedsOf_day() {
+        SortDownProceeds.sortDownProceeds();
+    }
 }

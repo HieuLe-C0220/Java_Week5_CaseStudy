@@ -11,5 +11,6 @@ public interface ProductManagerAct {
     void orderFood();
     void pay();
     void proceedsOf_day();
-    void sortProceedsOf_day();
+    void sortUpProceedsOf_day();
+    void sortDownProceedsOf_day();
 }
