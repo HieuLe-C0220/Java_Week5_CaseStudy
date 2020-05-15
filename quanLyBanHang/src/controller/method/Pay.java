@@ -11,9 +11,15 @@ public class Pay {
         String table = sc.next();
         int sum = 0;
         for (int i=0;i<arrList.size();i++) {
-            if (table.equals(arrList.get(i).getTable()) && !arrList.get(i).isPaid()) {
-                sum += arrList.get(i).getPrice() * arrList.get(i).getAmount();
-                arrList.get(i).setPaid(true);
+            if (table.equals(arrList.get(i).getTable())) {
+                if (!arrList.get(i).isCooked()) {
+                    System.out.println("Đã ăn đâu mà thanh toán");
+                } else if (arrList.get(i).isPaid()) {
+                    System.out.println("Bàn này thanh toán rồi");
+                } else {
+                    sum += arrList.get(i).getPrice() * arrList.get(i).getAmount();
+                    arrList.get(i).setPaid(true);
+                }
             }
         }
         System.out.println("Bàn này tổng hết: "+sum);
