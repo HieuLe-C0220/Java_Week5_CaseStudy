@@ -3,6 +3,7 @@ package controller;
 import controller.method.*;
 import impl.ProductManagerAct;
 import model.Food;
+import model.Proceeds;
 import model.Product;
 import storage.ProductList;
 

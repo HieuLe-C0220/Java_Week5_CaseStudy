@@ -12,8 +12,9 @@ public class Synchronized {
     BufferedReader br = null;
     String line = null;
     String[] food;
+    ArrayList<Product> productsList = listManager.productsList;
+    ArrayList<Proceeds> proceedsList = listManager.proceedsList;
     public void readToFileMenu(File inFile) {
-        ArrayList<Product> productsList = listManager.productsList;
         try {
             fileReader = new FileReader(inFile);
             br = new BufferedReader(fileReader);
@@ -29,12 +30,12 @@ public class Synchronized {
             e.printStackTrace();
         }
     }
-    public void writeToFileMenu(ArrayList<Product> arrayList,File outFile) {
+    public void writeToFileMenu(File outFile) {
         try {
             FileWriter fileWriter = new FileWriter(outFile);
             BufferedWriter bw = new BufferedWriter(fileWriter);
             String content = null;
-            for (Product newFood : arrayList) {
+            for (Product newFood : productsList) {
                 String id = newFood.getId();
                 String name = newFood.getName();
                 int price = newFood.getPrice();
@@ -50,14 +51,13 @@ public class Synchronized {
         }
     }
     public void readToFileProceeds(File inFile) {
-        ArrayList<Proceeds> productsList = listManager.proceedsList;
         try {
             fileReader = new FileReader(inFile);
             br = new BufferedReader(fileReader);
             while ((line = br.readLine()) != null) {
                 food = line.split(",");
                 Proceeds addProceeds = new Proceeds(food[0],Integer.parseInt(food[1])){};
-                productsList.add(addProceeds);
+                proceedsList.add(addProceeds);
             }
             br.close();
         } catch (FileNotFoundException e) {
@@ -66,12 +66,12 @@ public class Synchronized {
             e.printStackTrace();
         }
     }
-    public void writeToFileProceeds(ArrayList<Proceeds> arrayList,File outFile) {
+    public void writeToFileProceeds(File outFile) {
         try {
             FileWriter fileWriter = new FileWriter(outFile);
             BufferedWriter bw = new BufferedWriter(fileWriter);
             String content = null;
-            for (Proceeds newProceeds : arrayList) {
+            for (Proceeds newProceeds : proceedsList) {
                 String day = newProceeds.getDay();
                 int money = newProceeds.getMoney();
                 content = day + "," + money;

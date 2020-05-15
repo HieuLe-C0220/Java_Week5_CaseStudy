@@ -12,7 +12,7 @@ public class FindProduct {
         String name = scanner.next();
         boolean check=false;
         for (Product product : arrayList) {
-            if (product.getName().equals(name)) {
+            if (product.getName().equalsIgnoreCase(name)) {
                 check = true;
                 break;
             }
