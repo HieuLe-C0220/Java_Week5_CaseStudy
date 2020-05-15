@@ -12,7 +12,6 @@ public class OrderFood {
     public static void orderFood(ArrayList<Product> arrList) {
         ProductList order = ProductList.getInstance();
         List<Food> orderList = order.orderList;
-        List<Food> foodsArrayList = order.foodArrayList;
         Scanner scanner = new Scanner(System.in).useDelimiter("\n");
         System.out.println("Nhập số thứ tự của món khách order: ");
         int numberId = scanner.nextInt();
@@ -30,9 +29,8 @@ public class OrderFood {
                 amount = AddProduct.checkNull(scanner,amount,"Cần nhập số lượng");
                 System.out.println("Khách có yêu cầu gì khác không?");
                 String note = scanner.next();
-                Food orderFoods = new Food(table,id, name, price,Integer.parseInt(amount),description,note);
+                Food orderFoods = new Food(table,id, name, price,Integer.parseInt(amount),description,note, false,false);
                 orderList.add(orderFoods);
-                foodsArrayList.add(orderFoods);
                 break;
             }
         }

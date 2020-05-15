@@ -14,8 +14,9 @@ public class Test {
         productManager.orderFood();
         productManager.orderFood();
         productManager.showOrderList();
-        productManager.pay();
-//        productManager.ordered();
+//        productManager.pay();
+        productManager.ordered();
+        productManager.showOrderList();
 //        productManager.orderFood();
 //        productManager.addProduct();
 //        productManager.editInformationProduct();
