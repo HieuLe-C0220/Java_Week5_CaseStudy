@@ -13,6 +13,7 @@ public class ProductManager implements ProductManagerAct {
     ProductList listManager = ProductList.getInstance();
     private final ArrayList<Product> arrayList = listManager.productsList;
     private final ArrayList<Food> orderList = listManager.orderList;
+    private final ArrayList<Proceeds> proceedsList = listManager.proceedsList;
     @Override
     public void addProduct() {
         AddProduct.addProduct(arrayList);
@@ -64,11 +65,11 @@ public class ProductManager implements ProductManagerAct {
 
     @Override
     public void sortUpProceedsOf_day() {
-        SortUpProceeds.sortUpProceeds();
+        SortUpProceeds.sortUpProceeds(proceedsList);
     }
 
     @Override
     public void sortDownProceedsOf_day() {
-        SortDownProceeds.sortDownProceeds();
+        SortDownProceeds.sortDownProceeds(proceedsList);
     }
 }

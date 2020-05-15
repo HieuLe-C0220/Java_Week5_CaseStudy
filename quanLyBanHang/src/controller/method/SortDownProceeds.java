@@ -1,17 +1,11 @@
 package controller.method;
 
 import model.Proceeds;
-import storage.ProductList;
-import storage.Synchronized;
 
 import java.util.ArrayList;
 
 public class SortDownProceeds {
-    public static void sortDownProceeds() {
-        ProductList list = ProductList.getInstance();
-        Synchronized sync = new Synchronized();
-        sync.readToFileProceeds(list.getProceedsDay());
-        ArrayList<Proceeds>arrayList = list.proceedsList;
+    public static void sortDownProceeds(ArrayList<Proceeds>arrayList) {
         boolean status = true;
         for (int k = 1; k < arrayList.size() && status; k++) {
             status = false;

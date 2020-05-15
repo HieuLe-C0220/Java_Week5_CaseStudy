@@ -7,11 +7,7 @@ import storage.Synchronized;
 import java.util.ArrayList;
 
 public class SortUpProceeds {
-    public static void sortUpProceeds() {
-        ProductList list = ProductList.getInstance();
-        Synchronized sync = new Synchronized();
-        sync.readToFileProceeds(list.getProceedsDay());
-        ArrayList<Proceeds>arrayList = list.proceedsList;
+    public static void sortUpProceeds(ArrayList<Proceeds>arrayList) {
         for (int i = 0; i < arrayList.size(); i++) {
             Proceeds currentMin = arrayList.get(i);
             int currentMinIndex = i;

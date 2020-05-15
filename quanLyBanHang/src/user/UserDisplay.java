@@ -48,7 +48,9 @@ public class UserDisplay {
         System.out.println("4. Delete product by id");
         System.out.println("5. Edit food static");
         System.out.println("6. Show food order");
-        System.out.println("7. Show doanh thu");
+        System.out.println("7. Doanh thu ngày");
+        System.out.println("8. Doanh thu ngày cao nhất");
+        System.out.println("9. Doanh thu ngày thấp nhất");
         System.out.println("0. Save and Exit");
         System.out.print("Enter your choice: ");
         int adminOption = sc.nextInt();
@@ -80,6 +82,15 @@ public class UserDisplay {
             case 7:
                 productManager.proceedsOf_day();
                 showMenuAdmin();
+                break;
+            case 8:
+                productManager.sortDownProceedsOf_day();
+                showMenuAdmin();
+                break;
+            case 9:
+                productManager.sortUpProceedsOf_day();
+                showMenuAdmin();
+                break;
             case 0:
                 System.out.println("Login out...");
                 aSynchronized.writeToFileMenu(list.getMenuFile());
