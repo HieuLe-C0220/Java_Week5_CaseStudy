@@ -13,7 +13,7 @@ public class OrderFood {
         ProductList order = ProductList.getInstance();
         List<Food> orderList = order.orderList;
         Scanner scanner = new Scanner(System.in).useDelimiter("\n");
-        System.out.println("Nhập số thứ tự của món khách order: ");
+        System.out.println("Nhập Id của món khách order: ");
         int numberId = scanner.nextInt();
         for (int i = 0; i < arrList.size(); i++) {
             if (i == numberId) {

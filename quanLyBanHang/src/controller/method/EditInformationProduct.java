@@ -33,6 +33,7 @@ public class EditInformationProduct {
                 String newDescription = sc.next();
                 newDescription = AddProduct.checkNull(sc,newDescription,"Bạn cần nhập description");
                 product.setDescription(newDescription);
+                break;
             }
         }
     }

@@ -6,5 +6,5 @@
 005,Phở tái chín,45000,Đặc biệt
 006,Phở tái chín,30000,Bình thường
 007,Phở tái gàu,50000,Đặc biệt
-008,Phở tái gàu,35000,bhịt bắp
-010,Cháo lươn,35000,Bình thường
+008,Phở tái gàu,35000,Bình thường
+009,Cháo sinh viên,300000,out of date

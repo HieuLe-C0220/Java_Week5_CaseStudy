@@ -1,8 +1,5 @@
 package view;
 
-import controller.ProductManager;
-import storage.Synchronized;
-import storage.ProductList;
 import user.UserDisplay;
 
 public class Main {
