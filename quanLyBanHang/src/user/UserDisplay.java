@@ -31,6 +31,8 @@ public class UserDisplay {
                 start();
                 break;
             case 0:
+                aSynchronized.writeToFileMenu(list.getMenuFile());
+                aSynchronized.writeToFileProceeds(list.getProceedsDay());
                 System.exit(0);
         }
     }
