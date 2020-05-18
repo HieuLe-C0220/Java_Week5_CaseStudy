@@ -6,11 +6,11 @@ public class Food extends Product {
     private String table;
     private int amount = 0;
     private String note = null;
-    private boolean cooked = false;
-    private boolean paid = false;
+    private String cooked = "Đang chờ";
+    private String paid = "Chưa thanh toán";
     public Food() {
     }
-    public Food(String table,String id,String name,int price,int amount,String description,String note,boolean cooked,boolean paid) {
+    public Food(String table,String id,String name,int price,int amount,String description,String note,String cooked,String paid) {
         super(id, name, price, description);
         this.table = table;
         this.amount = amount;
@@ -61,24 +61,24 @@ public class Food extends Product {
         return super.getDescription();
     }
 
-    public boolean isCooked() {
+    public String getCooked() {
         return cooked;
     }
 
-    public void setCooked(boolean cooked) {
+    public void setCooked(String cooked) {
         this.cooked = cooked;
     }
 
-    public boolean isPaid() {
+    public String getPaid() {
         return paid;
     }
 
-    public void setPaid(boolean paid) {
+    public void setPaid(String paid) {
         this.paid = paid;
     }
 
     @Override
     public String toString() {
-        return getTable()+","+getId()+","+getName()+","+getPrice()+","+getAmount()+","+getDescription()+","+getNote()+","+isCooked()+","+isPaid();
+        return getTable()+","+getId()+","+getName()+","+getPrice()+","+getAmount()+","+getDescription()+","+getNote()+","+getCooked()+","+getPaid();
     }
 }

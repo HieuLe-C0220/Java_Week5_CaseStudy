@@ -12,13 +12,13 @@ public class Pay {
         int sum = 0;
         for (int i=0;i<arrList.size();i++) {
             if (table.equals(arrList.get(i).getTable())) {
-                if (!arrList.get(i).isCooked()) {
+                if (arrList.get(i).getCooked().equalsIgnoreCase("Đang chờ")) {
                     System.out.println("Đã ăn đâu mà thanh toán");
-                } else if (arrList.get(i).isPaid()) {
+                } else if (!arrList.get(i).getPaid().equalsIgnoreCase("Chưa thanh toán")) {
                     System.out.println("Bàn này thanh toán rồi");
                 } else {
                     sum += arrList.get(i).getPrice() * arrList.get(i).getAmount();
-                    arrList.get(i).setPaid(true);
+                    arrList.get(i).setPaid("Đã thanh toán");
                 }
             }
         }

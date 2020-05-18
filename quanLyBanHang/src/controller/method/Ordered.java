@@ -17,8 +17,8 @@ public class Ordered {
             System.out.println("Của bàn nào?");
             String table = sc.next();
             for (int i=0;i<foodArrayList.size();i++) {
-                if (id.equals(foodArrayList.get(i).getId()) && table.equals(foodArrayList.get(i).getTable()) && !foodArrayList.get(i).isCooked()) {
-                    foodArrayList.get(i).setCooked(true);
+                if (id.equals(foodArrayList.get(i).getId()) && table.equals(foodArrayList.get(i).getTable()) && foodArrayList.get(i).getCooked().equals("Đang chờ")) {
+                    foodArrayList.get(i).setCooked("Ordered");
                     break;
                 }
             }

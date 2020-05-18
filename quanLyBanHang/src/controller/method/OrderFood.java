@@ -29,7 +29,7 @@ public class OrderFood {
                 amount = AddProduct.checkNull(scanner,amount,"Cần nhập số lượng");
                 System.out.println("Khách có yêu cầu gì khác không?");
                 String note = scanner.next();
-                Food orderFoods = new Food(table,id, name, price,Integer.parseInt(amount),description,note, false,false);
+                Food orderFoods = new Food(table,id, name, price,Integer.parseInt(amount),description,note, "Đang chờ","Chưa thanh toán");
                 orderList.add(orderFoods);
                 break;
             }
